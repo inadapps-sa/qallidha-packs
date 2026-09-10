@@ -1,0 +1,37 @@
+{
+  "id": "funny-sample",
+  "name": "حزمة تجريبية مضحكة",
+  "version": 1,
+  "prompts": [
+    {
+      "title": "صوت مضحك 1",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/01.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "صوت مضحك 2",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/02.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "صوت مضحك 3",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/03.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "صوت مضحك 4",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/04.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "صوت مضحك 5",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/05.m4a",
+      "symbol": "waveform"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#120823">
+<title>حزمة قلّدها</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#3a1662,#120823 55%,#080511);color:#fff;display:grid;place-items:center;padding:24px}.card{width:min(440px,100%);padding:28px;border:1px solid rgba(255,255,255,.14);border-radius:28px;background:rgba(255,255,255,.07);backdrop-filter:blur(18px);text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.35)}.logo{width:88px;height:88px;border-radius:26px;margin:0 auto 18px;display:grid;place-items:center;font-size:42px;background:linear-gradient(145deg,#a34cff,#6f26db)}h1{font-size:34px;margin:4px 0 8px}#packName{font-size:22px;font-weight:800;margin:12px 0 4px}.muted{color:#cfc4da;font-size:14px}.btn{display:block;width:100%;margin-top:24px;border:0;border-radius:17px;padding:16px 18px;background:#8a3ffc;color:white;text-decoration:none;font-size:18px;font-weight:850;cursor:pointer}.hint{font-size:12px;color:#a99bb7;margin-top:14px;line-height:1.7}.error{color:#ffb4b4}</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🎙️</div>
+  <h1>قلّدها</h1>
+  <div id="packName">جاري قراءة الحزمة…</div>
+  <div id="packInfo" class="muted"></div>
+  <a id="open" class="btn" href="#">فتح وتنزيل الحزمة</a>
+  <div id="status" class="hint">إذا لم يفتح التطبيق تلقائيًا اضغط الزر.</div>
+</div>
+<script>
+(async()=>{
+  const manifestURL = new URL('manifest.json', location.href).href;
+  const open = document.getElementById('open');
+  const name = document.getElementById('packName');
+  const info = document.getElementById('packInfo');
+  const status = document.getElementById('status');
+  const deep = 'qallidha://pack?url=' + encodeURIComponent(manifestURL);
+  open.href = deep;
+  try {
+    const res = await fetch(manifestURL, {cache:'no-store'});
+    if(!res.ok) throw new Error('manifest');
+    const pack = await res.json();
+    name.textContent = pack.name || 'حزمة قلّدها';
+    info.textContent = `${(pack.prompts||[]).length} أصوات • إصدار ${pack.version ?? 1}`;
+    document.title = `${pack.name || 'حزمة'} — قلّدها`;
+    setTimeout(()=>{ location.href = deep; }, 550);
+  } catch(e) {
+    name.textContent = 'تعذر قراءة الحزمة';
+    status.textContent = 'تأكد أن manifest.json موجود داخل نفس مجلد الصفحة.';
+    status.classList.add('error');
+  }
+})();
+</script>
+</body>
+</html>

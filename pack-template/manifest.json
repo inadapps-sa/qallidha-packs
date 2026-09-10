@@ -1,0 +1,37 @@
+{
+  "id": "khaleeji-01",
+  "name": "أصوات خليجية 01",
+  "version": 1,
+  "prompts": [
+    {
+      "title": "الصوت 1",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/01.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "الصوت 2",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/02.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "الصوت 3",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/03.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "الصوت 4",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/04.m4a",
+      "symbol": "waveform"
+    },
+    {
+      "title": "الصوت 5",
+      "subtitle": "قلّد الصوت",
+      "audioURL": "audio/05.m4a",
+      "symbol": "waveform"
+    }
+  ]
+}
