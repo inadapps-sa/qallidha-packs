@@ -1,7 +1,7 @@
 {
-  "id": "funny-sample",
-  "name": "حزمة تجريبية مضحكة",
-  "version": 1,
+  "id": "funny-01",
+"name": "أصوات مضحكة",
+"version": 1,
   "prompts": [
     {
       "title": "صوت مضحك 1",
